@@ -1,11 +1,11 @@
-
 import { CurriculoFetch } from "../hooks/curriculoFetch";
 
 const Header = () => {
-    const { curriculo, loading } = CurriculoFetch();
+    const { curriculo, erro } = CurriculoFetch();
+    console.log(curriculo);
     let dadosCarregados = false;
 
-    if (curriculo !== null) {
+    if (curriculo !== null && erro === null) {
         dadosCarregados = true;
     }
 
@@ -17,7 +17,7 @@ const Header = () => {
                     <div className="col-md-8 col-md-offset-2 text-center">
                         <div className="display-t js-fullheight">
                             <div className="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-                                { loading && <h1><span>Carregando...</span></h1>}
+                                { !dadosCarregados && <h1><span>Carregando...</span></h1>}
                                 { dadosCarregados &&
                                 <div>
                                     <div className="profile-thumb"></div>

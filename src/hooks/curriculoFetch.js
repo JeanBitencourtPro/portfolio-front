@@ -7,20 +7,21 @@ export const CurriculoFetch = () => {
     };
 
     const [curriculo, setCurriculo] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [erro, setErro] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true);
-            const res = await fetch(url, { method: 'GET', headers: headerRequest });
-            const data = await res.json();
-            setCurriculo(data.data);
-            setLoading(false);
-        }
-
         fetchData();
     }, []);
 
+    const fetchData = async () => {
+        try {
+            const res = await fetch(url, { method: 'GET', headers: headerRequest });
+            const data = await res.json();
+            setCurriculo(data.data);
+        } catch (error) {
+            setErro(error.message);
+        }
+    }
 
-    return { curriculo, loading };
+    return { curriculo, erro };
 };
