@@ -11,21 +11,21 @@ const Sobre = () => {
 
     return (
         <div className="container div-sobre">
-            <div className="div-contato">
-                <Link to="/contato"><button className='btn'>Entrar em Contato</button></Link>
-            </div>
             { dadosCarregados && <div className="row">
                 <div className="col-md-4">
                     <ul className="info">
                         <li><span className="first-block">Nome:</span><span className="second-block">{ curriculo.nome }</span></li>
                         <li><span className="first-block">Telefone:</span><span className="second-block" dangerouslySetInnerHTML={{ __html: curriculo.celular }} /></li>
                         <li><span className="first-block">Email:</span><span className="second-block">{ curriculo.email }</span></li>
-                        <li><span className="first-block">Site:</span><a href="https://jeanbitencourt.dev" target="blank"><span className="second-block">{ curriculo.site }</span></a></li>
+                        <li><span className="first-block">Site:</span><span className="second-block">{ curriculo.site }</span></li>
                         <li><span className="first-block">Endereço:</span><span className="second-block">{ curriculo.endereco }</span></li>
                     </ul>
                 </div>
                 <div className="col-md-8" dangerouslySetInnerHTML={{ __html: curriculo.descricao }} />
             </div>}
+            <div className="div-contato">
+                <Link to="/contato"><button className='btn'>Entrar em Contato</button></Link>
+            </div>
         </div>
     );
 };

@@ -7,7 +7,7 @@ const Header = () => {
     if (curriculo !== null && erro === null) {
         dadosCarregados = true;
     }
-
+    
     return (
         <header id="fh5co-header" className="fh5co-cover js-fullheight" role="banner" data-stellar-background-ratio="0.5">
             <div className="overlay"></div>
@@ -20,7 +20,7 @@ const Header = () => {
                                 { dadosCarregados &&
                                 <div>
                                     <div className="profile-thumb"></div>
-                                    <a href="https://jeanbitencourt.dev/login"><h1><span>{ curriculo.nome }</span></h1></a>
+                                    <h1><span>{ curriculo.nome }</span></h1>
                                     <h3><span>{ curriculo.cargo }</span></h3>
                                     <ul className="fh5co-social-icons">
                                         <li title="Linkedin"><a href={ curriculo.linkedin } target="blank"><i className="icon-linkedin2"></i></a></li>

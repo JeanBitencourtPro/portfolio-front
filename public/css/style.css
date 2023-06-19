@@ -1304,12 +1304,27 @@ input[type="text"] {
 }
 
 .div-sobre {
-  margin-top: 25px;
+  margin-top: 50px;
   margin-bottom: 35px;
 }
 
 .div-contato {
   margin-bottom: 30px;
+}
+
+.email-invalido {
+  color: red;
+  float: left;
+}
+
+.div-voltar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-voltar {
+  float: left;
 }
 
 footer {
@@ -1325,6 +1340,11 @@ footer p {
   color: white;
   font-weight: bold;
   margin-top: 15px;
+}
+
+.mensagem-enviada h3 {
+  color: #27ae60;
+  font-family: "Kaushan Script";
 }
 
 .div-footer {
